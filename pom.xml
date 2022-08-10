@@ -7,10 +7,10 @@
   <version>1.0-RELEASE</version>
   <name>01-maven-web-app Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <repositories>
+ <repositories>
    <repository>
 	   <id>nexus</id>
-	   <url>http://3.109.183.130:8081/repository/remoterepo2/</url>
+	   <url>http://3.109.183.130:8081/repository/remorepo/</url>
    </repository>
   </repositories>
   <dependencies>
@@ -20,11 +20,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-   <dependency>
-     <groupId>in.ashokit</groupId>
-     <artifactId>pwd-utils</artifactId>
-     <version>1.0</version>
-   </dependency>
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 <dependency>
     <groupId>org.springframework</groupId>
@@ -37,6 +32,11 @@
     <artifactId>spring-boot-starter-web</artifactId>
     <version>2.5.14</version>
 </dependency>
+    <dependency>
+      <groupId>in.ashokit</groupId>
+      <artifactId>pwd-utils</artifactId>
+      <version>1.0</version>
+    </dependency>
 
   </dependencies>
   
@@ -44,7 +44,7 @@
 	<repository>
 		<id>nexus</id>
 		<name> Arsalan IT Releases Nexus Repo</name>
-		<url>http://3.109.183.130:8081/repository/mvnrelease//</url>
+		<url>http://3.109.183.130:80818081/repository/mvnrelease//</url>
 	</repository>
 	
 	<snapshotRepository>
