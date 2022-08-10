@@ -56,6 +56,7 @@ nexusArtifactUploader artifacts: [[
             kubernetesDeploy(
             configs: 'maven-webapp.yml',
             kubeconfigId: 'kubernetes'
+        )
         }
     }
     stage('Deploy in Apache Tomcat'){
