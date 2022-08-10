@@ -8,18 +8,17 @@ stages{
         }
     stage('maven build'){
         steps{
-            def mvn_version = 'maven-3.8.6'
-            withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-            sh 'mvn clean package'
-            }
+            def mavenHome = tool name: 'maven-3.8.6', type: 'maven'
+            def mavenCMD = '${mavenHome/bin/mvn}'
+            sh '${mavenCMD} clean package'
         }
     }
     stage('sonar test'){
         steps{
             withSonarQubeEnv('Sonar-Server-7.8'){
-            def mvn_version = 'maven-3.8.6'
-            withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] )
-            sh 'mvn sonar:sonar'
+            def mavenHome = tool name: 'maven-3.8.6', type: 'maven'
+            def mavenCMD = '${mavenHome/bin/mvn}'
+            sh '${mavenCMD} sonar:sonar'
         }
             }
 
