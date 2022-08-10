@@ -15,7 +15,7 @@ spec:
    spec:
     containers:
     - name: javawebappcontainers
-      image: thazeem/mavenwebapp
+      image: ashokit/javawebapp
       ports:
       - containerPort: 8080
 ---
