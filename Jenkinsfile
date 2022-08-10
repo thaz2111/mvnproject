@@ -11,7 +11,7 @@ stages{
             def mavenHome = tool name: 'maven-3.8.6', type: 'maven'
             def mavenCMD = '${mavenHome/bin/mvn}'
             sh '${mavenCMD} clean package'
-        }
+            }
     }
     stage('sonar test'){
         steps{
@@ -19,8 +19,8 @@ stages{
             def mavenHome = tool name: 'maven-3.8.6', type: 'maven'
             def mavenCMD = '${mavenHome/bin/mvn}'
             sh '${mavenCMD} sonar:sonar'
-        }
             }
+        }
 
     }
     stage('Artifacts to Nexus Repo'){
@@ -62,9 +62,10 @@ nexusArtifactUploader artifacts: [[
     stage('Deploy in Apache Tomcat'){
         steps{
             sshagent(['ssh-agent']){
-                 sh 'scp -o StrictHostKeyChecking=No target/01-maven-webapp.war ec2-user@ip:/home/ubuntu/apache-tomcat-9.0.65/webapps'
-            }    sh 'ssh -o StrictHostKeyChecking=no ubuntu@13.126.219.66 sh /home/ubuntu/apache-tomcat-9.0.65/bin/startup.sh'  
-        }
+               sh 'scp -o StrictHostKeyChecking=No target/01-maven-webapp.war ec2-user@ip:/home/ubuntu/apache-tomcat-9.0.65/webapps'
+               sh 'ssh -o StrictHostKeyChecking=no ubuntu@13.126.219.66 sh /home/ubuntu/apache-tomcat-9.0.65/bin/startup.sh'  
+                 }
+         }
     }
 }
 }
