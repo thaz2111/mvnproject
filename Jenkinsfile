@@ -61,8 +61,8 @@ nexusArtifactUploader artifacts: [[
     stage('Deploy in Apache Tomcat'){
         steps{
             sshagent(['ssh-agent']){
-               sh 'scp -o StrictHostKeyChecking=No target/01-maven-webapp.war ec2-user@ip:/home/ubuntu/apache-tomcat-9.0.65/webapps'
-               sh 'ssh -o StrictHostKeyChecking=no ubuntu@13.126.219.66 sh /home/ubuntu/apache-tomcat-9.0.65/bin/startup.sh'  
+               sh 'scp -o StrictHostKeyChecking=No target/01-maven-webapp.war ec2-user@3.110.191.221:/home/ubuntu/apache-tomcat-9.0.65/webapps'
+               sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.110.191.221 sh /home/ubuntu/apache-tomcat-9.0.65/bin/startup.sh'  
                  }
          }
     }
