@@ -7,12 +7,6 @@
   <version>1.0-RELEASE</version>
   <name>01-maven-web-app Maven Webapp</name>
   <url>http://maven.apache.org</url>
- <repositories>
-   <repository>
-	   <id>nexus</id>
-	   <url>http://3.109.183.130:8081/repository/remorepo/</url>
-   </repository>
-  </repositories>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -32,11 +26,6 @@
     <artifactId>spring-boot-starter-web</artifactId>
     <version>2.5.14</version>
 </dependency>
-    <dependency>
-      <groupId>in.ashokit</groupId>
-      <artifactId>pwd-utils</artifactId>
-      <version>1.0</version>
-    </dependency>
   </dependencies>
 <distributionManagement>  
 	<repository>
