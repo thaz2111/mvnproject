@@ -8,14 +8,13 @@ stages{
         }
     stage('maven build'){
         steps{
-            sh 'mvn clean package'
+            sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
     }
     stage('sonar test'){
         steps{
             withSonarQubeEnv('Sonar-Server-7.8'){
-
-            sh 'mvn sonar:sonar'
+            sh "mvn -Dmaven.test.failure.ignore=true sonar:sonar"
             }
         }
 
