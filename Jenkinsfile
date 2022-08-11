@@ -39,7 +39,7 @@ nexusArtifactUploader artifacts: [[
     }
     stage('Docker Build'){
         steps{
-            sh 'docker build -t thazeemsk/javawebapp'
+            sh 'docker build -t thazeemsk/javawebapp .'
         }
     }
     stage('Docker Push'){
